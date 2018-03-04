@@ -7,7 +7,11 @@
 
 
 class Neuron {
-
+private:
+    int value;
+    int weight;
+public:
+    sigmoid();
 };
 
 
