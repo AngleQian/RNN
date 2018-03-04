@@ -12,6 +12,8 @@ private:
     int weight;
 public:
     sigmoid();
+
+    activation();
 };
 
 
