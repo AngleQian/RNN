@@ -7,6 +7,8 @@
 
 
 class Layer {
+public:
+private:
 
 };
 

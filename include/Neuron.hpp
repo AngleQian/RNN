@@ -8,12 +8,16 @@
 
 class Neuron {
 private:
-    int value;
-    int weight;
-public:
-    sigmoid();
+    double value;
+    double weight;
 
-    activation();
+    double sigmoid(double x);
+public:
+    double getValue() { return value; }
+
+    double getWeight() { return weight; }
+
+    void activation();
 };
 
 
