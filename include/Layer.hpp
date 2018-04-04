@@ -5,11 +5,23 @@
 #ifndef RNN_LAYER_HPP
 #define RNN_LAYER_HPP
 
+#include "Neuron.hpp"
+#include <vector>
+
+class RandomGen;
+
+class Neuron;
 
 class Layer {
 public:
-private:
+    Layer();
 
+    void initializeLayer(RandomGen *randomGen);
+
+    std::vector<Neuron *> *getLayer() { return &layer; };
+
+private:
+    std::vector<Neuron *> layer;
 };
 
 

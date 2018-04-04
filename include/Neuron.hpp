@@ -5,19 +5,29 @@
 #ifndef RNN_NEURON_HPP
 #define RNN_NEURON_HPP
 
+#include "Client.hpp"
+
+class RandomGen;
 
 class Neuron {
-private:
-    double value;
-    double weight;
-
-    double sigmoid(double x);
 public:
+    Neuron();
+
+    void activate();
+
+    void initializeNeuron(RandomGen *randomGen);
+
     double getValue() { return value; }
 
-    double getWeight() { return weight; }
+    double getWeight() { return weight; };
 
-    void activation();
+private:
+    double f(double x);
+
+    double df(double x);
+
+    double value;
+    double weight;
 };
 
 

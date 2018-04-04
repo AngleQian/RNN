@@ -5,10 +5,22 @@
 #ifndef RNN_CLIENT_HPP
 #define RNN_CLIENT_HPP
 
+#include <vector>
+#include "Utils.hpp"
+
+class Network;
 
 class Client {
-private:
 public:
+    explicit Client(std::vector<int> topology);
+
+    void initNetwork();
+
+    Network *getNetwork() { return neuralNetwork; }
+
+private:
+    std::vector<int> topology; //first element is size of input layer, last element is size of output layer
+    Network *neuralNetwork;
 };
 
 

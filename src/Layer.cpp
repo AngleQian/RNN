@@ -3,3 +3,13 @@
 //
 
 #include "../include/Layer.hpp"
+
+Layer::Layer() {
+
+}
+
+void Layer::initializeLayer(RandomGen *randomGen) {
+    for (Neuron *neuron : layer) {
+        neuron->initializeNeuron(randomGen);
+    }
+}

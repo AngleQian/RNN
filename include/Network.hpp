@@ -5,9 +5,23 @@
 #ifndef RNN_NETWORK_HPP
 #define RNN_NETWORK_HPP
 
+#include <vector>
+#include "Layer.hpp"
+
+class RandomGen;
+
+class Layer;
 
 class Network {
+public:
+    explicit Network(std::vector<int> topology);
 
+    void initializeNetwork(RandomGen *randomGen);
+
+    std::vector<Layer *> *getNetwork() { return &network; }
+
+private:
+    std::vector<Layer *> network;
 };
 
 
