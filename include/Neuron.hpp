@@ -9,6 +9,8 @@
 
 class RandomGen;
 
+class Layer;
+
 class Neuron {
 public:
     Neuron();
@@ -19,7 +21,11 @@ public:
 
     double getValue() { return value; }
 
+    void setValue(double value) { this->value = value; }
+
     double getWeight() { return weight; };
+
+    void feedForward(Layer *prevLayer);
 
 private:
     double f(double x);

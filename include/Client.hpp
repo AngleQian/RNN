@@ -18,6 +18,10 @@ public:
 
     Network *getNetwork() { return neuralNetwork; }
 
+    void feedForward();
+
+    void backPropagation();
+
 private:
     std::vector<int> topology; //first element is size of input layer, last element is size of output layer
     Network *neuralNetwork;

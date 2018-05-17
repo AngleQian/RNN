@@ -7,13 +7,19 @@ using namespace std;
 
 int main() {
     std::vector<int> networkTopology;
-    networkTopology.push_back(4);
-    networkTopology.push_back(5);
     networkTopology.push_back(3);
+    networkTopology.push_back(2);
+    networkTopology.push_back(1);
 
     Client client(networkTopology);
 
-    Utils::printWeights(client.getNetwork());
+    Utils::printWeights(client.getNetwork(), 5);
+
+    cout << endl;
+
+    Utils::printValues(client.getNetwork(), 5);
+
+    //Test commit
 
     return 0;
 }

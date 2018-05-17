@@ -20,6 +20,10 @@ public:
 
     std::vector<Layer *> *getNetwork() { return &network; }
 
+    void feedForward(std::vector<double> input);
+
+    void backPropagation();
+
 private:
     std::vector<Layer *> network;
 };

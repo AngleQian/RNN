@@ -24,3 +24,14 @@ double Neuron::f(double x) {
 double Neuron::df(double x) {
     return Utils::dtanh(x);
 }
+
+void Neuron::feedForward(Layer *prevLayer) {
+    double tempValue = 0;
+    //loop through neurons of the previous layer, including biased
+    for (Neuron *neuron : *(prevLayer->getLayer())) {
+        //sum the values * weights of those neurons
+        tempValue += neuron->getValue() * neuron->getWeight();
+    }
+    //pass the value through activation function
+    value = f(tempValue);
+}

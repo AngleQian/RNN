@@ -12,13 +12,27 @@ double Utils::dtanh(double x) {
     return (1 - pow(Utils::tanh(x), 2));
 }
 
-void Utils::printWeights(Network *n) {
+void Utils::printWeights(Network *n, int precision) {
     using namespace std;
+    cout << "Weights: " << endl;
     cout << fixed << showpoint;
-    cout << setprecision(4);
+    cout << setprecision(precision);
     for (Layer *layer : *(n->getNetwork())) {
         for (Neuron *neuron : *(layer->getLayer())) {
-            cout << neuron->getWeight() << "  ";
+            cout << neuron->getWeight() << "   ";
+        }
+        cout << endl;
+    }
+}
+
+void Utils::printValues(Network *n, int precision) {
+    using namespace std;
+    cout << "Values: " << endl;
+    cout << fixed << showpoint;
+    cout << setprecision(precision);
+    for (Layer *layer : *(n->getNetwork())) {
+        for (Neuron *neuron : *(layer->getLayer())) {
+            cout << neuron->getValue() << "   ";
         }
         cout << endl;
     }

@@ -13,3 +13,11 @@ void Layer::initializeLayer(RandomGen *randomGen) {
         neuron->initializeNeuron(randomGen);
     }
 }
+
+void Layer::feedForward(Layer *prevLayer) {
+    //loop through each neuron in the current layer
+    //skipping the last biased neuron
+    for (int i = 0; i != layer.size() - 1; ++i) {
+        layer.at(i)->feedForward(prevLayer);
+    }
+}

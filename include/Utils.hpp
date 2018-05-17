@@ -18,7 +18,9 @@ namespace Utils {
 
     double dtanh(double x);
 
-    void printWeights(Network *n);
+    void printWeights(Network *n, int precision);
+
+    void printValues(Network *n, int precision);
 }
 
 class RandomGen {

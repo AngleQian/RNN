@@ -20,6 +20,8 @@ public:
 
     std::vector<Neuron *> *getLayer() { return &layer; };
 
+    void feedForward(Layer *prevLayer);
+
 private:
     std::vector<Neuron *> layer;
 };
