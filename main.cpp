@@ -19,7 +19,6 @@ int main() {
 
     Utils::printValues(client.getNetwork(), 5);
 
-    //Test commit
 
     return 0;
 }
